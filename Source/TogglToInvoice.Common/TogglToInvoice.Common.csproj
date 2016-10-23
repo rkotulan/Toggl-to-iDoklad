@@ -91,6 +91,7 @@
     <Compile Include="Services\IDokladApiService.cs" />
     <Compile Include="Services\ISettingsService.cs" />
     <Compile Include="Services\SettingsService.cs" />
+    <Compile Include="Shared\CompanyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
