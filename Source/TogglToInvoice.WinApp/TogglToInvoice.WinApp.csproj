@@ -144,6 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon-heartbeat.ico" />
+    <Content Include="heartbeat_40_1_ffffff_none.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
