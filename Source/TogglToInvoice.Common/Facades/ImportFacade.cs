@@ -93,7 +93,11 @@ namespace TogglToInvoice.Common.Facades
 
             var invoice = api.IssuedInvoices.Default();
 
-            // invoice.DateOfIssue = invoice.DateOfIssue.AddHours(6);
+            invoice.DateOfIssue = DateTime.SpecifyKind(invoice.DateOfIssue, DateTimeKind.Utc);
+            invoice.DateOfMaturity = DateTime.SpecifyKind(invoice.DateOfMaturity, DateTimeKind.Utc);
+            invoice.DateOfPayment = DateTime.SpecifyKind(invoice.DateOfPayment, DateTimeKind.Utc);
+            invoice.DateOfTaxing = DateTime.SpecifyKind(invoice.DateOfTaxing, DateTimeKind.Utc);
+
             invoice.PurchaserId = contact.Data.FirstOrDefault()?.Id ?? 0;
             invoice.Description = issuedInvoiceItems[0].Name;
             invoice.CurrencyId = (int)this.appSetings.Currency;
