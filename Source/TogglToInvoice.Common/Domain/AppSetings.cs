@@ -10,8 +10,11 @@ namespace TogglToInvoice.Common.Domain
 
     using IdokladSdk.Enums;
 
+    using PostSharp.Patterns.Model;
+
     using TogglToInvoice.Common.Enums;
 
+    [NotifyPropertyChanged]
     public class AppSetings
     {
         public AppSetings()
@@ -42,6 +45,9 @@ namespace TogglToInvoice.Common.Domain
 
         public bool AutoSaveSettings { get; set; }
 
+        public bool AutoUpdateInterval { get; set; }
+
+        [NotifyPropertyChanged]
         public class DokladCfg
         {
             public string Username { get; set; }
@@ -49,6 +55,7 @@ namespace TogglToInvoice.Common.Domain
             public string Password { get; set; }
         }
 
+        [NotifyPropertyChanged]
         public class TogglCfg
         {
             public string ApiKey { get; set; }

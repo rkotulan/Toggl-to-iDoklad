@@ -62,6 +62,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnSaveSettings = new Syncfusion.Windows.Forms.ButtonAdv();
             this.btnImport = new Syncfusion.Windows.Forms.ButtonAdv();
+            this.chbAutoChangePeriod = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbTogglApiKey)).BeginInit();
@@ -84,7 +85,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(492, 331);
+            this.panel1.Size = new System.Drawing.Size(492, 372);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -112,7 +113,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(492, 331);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(492, 372);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel3
@@ -123,7 +124,7 @@
             this.panel3.Location = new System.Drawing.Point(490, 3);
             this.panel3.Name = "panel3";
             this.tableLayoutPanel1.SetRowSpan(this.panel3, 6);
-            this.panel3.Size = new System.Drawing.Size(1, 325);
+            this.panel3.Size = new System.Drawing.Size(1, 366);
             this.panel3.TabIndex = 0;
             // 
             // label2
@@ -169,7 +170,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(144, 20);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Přihlašovací jméno";
+            this.label4.Text = "Client Id";
             // 
             // label5
             // 
@@ -180,7 +181,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(144, 20);
             this.label5.TabIndex = 3;
-            this.label5.Text = "Heslo";
+            this.label5.Text = "Client Secret";
             // 
             // tbTogglApiKey
             // 
@@ -229,7 +230,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(492, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(436, 331);
+            this.panel2.Size = new System.Drawing.Size(436, 372);
             this.panel2.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -251,10 +252,12 @@
             this.tableLayoutPanel2.Controls.Add(this.label11, 0, 5);
             this.tableLayoutPanel2.Controls.Add(this.label12, 0, 6);
             this.tableLayoutPanel2.Controls.Add(this.chbAutoSave, 1, 7);
+            this.tableLayoutPanel2.Controls.Add(this.chbAutoChangePeriod, 1, 8);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 9;
+            this.tableLayoutPanel2.RowCount = 10;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
@@ -264,7 +267,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(436, 331);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(436, 372);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // label6
@@ -334,15 +337,15 @@
             this.dtpDateFrom.DropDownImage = null;
             this.dtpDateFrom.DropDownNormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
             this.dtpDateFrom.DropDownPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-            this.dtpDateFrom.DropDownSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(191)))), ((int)(((byte)(237)))));
+            this.dtpDateFrom.DropDownSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
             this.dtpDateFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dtpDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateFrom.Location = new System.Drawing.Point(103, 129);
+            this.dtpDateFrom.Location = new System.Drawing.Point(103, 126);
             this.dtpDateFrom.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
             this.dtpDateFrom.MinValue = new System.DateTime(((long)(0)));
             this.dtpDateFrom.Name = "dtpDateFrom";
             this.dtpDateFrom.ShowCheckBox = false;
-            this.dtpDateFrom.Size = new System.Drawing.Size(330, 22);
+            this.dtpDateFrom.Size = new System.Drawing.Size(330, 28);
             this.dtpDateFrom.Style = Syncfusion.Windows.Forms.VisualStyle.Metro;
             this.dtpDateFrom.TabIndex = 2;
             this.dtpDateFrom.ThemedChildControls = true;
@@ -361,15 +364,15 @@
             this.dtpDateTo.DropDownImage = null;
             this.dtpDateTo.DropDownNormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
             this.dtpDateTo.DropDownPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-            this.dtpDateTo.DropDownSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(191)))), ((int)(((byte)(237)))));
+            this.dtpDateTo.DropDownSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
             this.dtpDateTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dtpDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateTo.Location = new System.Drawing.Point(103, 169);
+            this.dtpDateTo.Location = new System.Drawing.Point(103, 166);
             this.dtpDateTo.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
             this.dtpDateTo.MinValue = new System.DateTime(((long)(0)));
             this.dtpDateTo.Name = "dtpDateTo";
             this.dtpDateTo.ShowCheckBox = false;
-            this.dtpDateTo.Size = new System.Drawing.Size(330, 22);
+            this.dtpDateTo.Size = new System.Drawing.Size(330, 28);
             this.dtpDateTo.Style = Syncfusion.Windows.Forms.VisualStyle.Metro;
             this.dtpDateTo.TabIndex = 3;
             this.dtpDateTo.ThemedChildControls = true;
@@ -501,7 +504,7 @@
             this.panel4.Controls.Add(this.btnSaveSettings);
             this.panel4.Controls.Add(this.btnImport);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 331);
+            this.panel4.Location = new System.Drawing.Point(0, 372);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(928, 73);
             this.panel4.TabIndex = 4;
@@ -547,6 +550,18 @@
             this.btnImport.UseVisualStyleBackColor = true;
             this.btnImport.Click += new System.EventHandler(this.OnImportClick);
             // 
+            // chbAutoChangePeriod
+            // 
+            this.chbAutoChangePeriod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.chbAutoChangePeriod.AutoSize = true;
+            this.chbAutoChangePeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.chbAutoChangePeriod.Location = new System.Drawing.Point(103, 328);
+            this.chbAutoChangePeriod.Name = "chbAutoChangePeriod";
+            this.chbAutoChangePeriod.Size = new System.Drawing.Size(330, 24);
+            this.chbAutoChangePeriod.TabIndex = 6;
+            this.chbAutoChangePeriod.Text = "Automaticky posunout časový interval";
+            this.chbAutoChangePeriod.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -570,7 +585,7 @@
             captionLabel1.Size = new System.Drawing.Size(160, 24);
             captionLabel1.Text = "Toggl to iDoklad";
             this.CaptionLabels.Add(captionLabel1);
-            this.ClientSize = new System.Drawing.Size(928, 404);
+            this.ClientSize = new System.Drawing.Size(928, 445);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
@@ -633,6 +648,7 @@
         private System.Windows.Forms.Label label12;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt tbJednotka;
         private System.Windows.Forms.CheckBox chbAutoSave;
+        private System.Windows.Forms.CheckBox chbAutoChangePeriod;
     }
 }
 

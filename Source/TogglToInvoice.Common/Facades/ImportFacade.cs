@@ -122,9 +122,9 @@ namespace TogglToInvoice.Common.Facades
         private RowsResultWrapper<ContactExpand> FindContactByName(string clientName, ApiExplorer api)
         {
             var contactFilter = new ContactFilter();
-            contactFilter.FilterType = FilterType.Eq;
-            contactFilter.Query = clientName;
-            var contact = api.Contacts.ContactsExpand(contactFilter);
+            contactFilter.CompanyName.IsEqual(clientName);
+            
+            var contact = api.Contacts.ContactsExpand(new ApiFilter(contactFilter));
             return contact;
         }
 

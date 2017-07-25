@@ -1,10 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="MainForm.cs" company="Rudolf Kotulán">
-//   Copyright © Rudolf Kotulán All Rights Reserved
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-namespace TogglToInvoice.WinApp
+﻿namespace TogglToInvoice.WinApp
 {
     using System;
     using System.Windows.Forms;
@@ -24,11 +18,11 @@ namespace TogglToInvoice.WinApp
 
     public partial class MainForm : MetroForm
     {
-        private readonly ISettingsService settingsService;
+        private readonly AppSetings appSetings;
 
         private readonly ILocalizableEnumFactory localizableEnumFactory;
-        
-        private readonly AppSetings appSetings;
+
+        private readonly ISettingsService settingsService;
 
         public MainForm(
             ISettingsService settingsService,
@@ -38,13 +32,19 @@ namespace TogglToInvoice.WinApp
             this.appSetings = appSetings;
             this.settingsService = settingsService;
             this.localizableEnumFactory = localizableEnumFactory;
-            this.InitializeComponent();
+            InitializeComponent();
+        }
+
+        private void AutoSaveConfig()
+        {
+            if (appSetings.AutoSaveSettings)
+            {
+                settingsService.Save(appSetings);
+            }
         }
 
         private void OnImportClick(object sender, EventArgs e)
         {
-            this.AutoSaveConfig();
-
             using (var scope = Engine.Instance.BeginLifetimeScope())
             {
                 using (var form = scope.Resolve<ProgressForm>())
@@ -58,42 +58,48 @@ namespace TogglToInvoice.WinApp
                     form.ShowDialog(this);
                 }
             }
+
+            AutoUpdateTimeRange();
+            AutoSaveConfig();
         }
 
-        private void AutoSaveConfig()
+        private void AutoUpdateTimeRange()
         {
-            if (this.appSetings.AutoSaveSettings)
+            if (appSetings.AutoUpdateInterval)
             {
-                this.settingsService.Save(this.appSetings);
+                var span = appSetings.DateTo.Date - appSetings.DateFrom.Date;
+                appSetings.DateFrom = appSetings.DateTo.Date.AddDays(1);
+                appSetings.DateTo = appSetings.DateFrom.Add(span);
             }
         }
 
         private void OnLoad(object sender, EventArgs e)
         {
-            this.tbTogglApiKey.DataBindings.Add("Text", this.appSetings, "Toggl.ApiKey");
-            this.tbUserName.DataBindings.Add("Text", this.appSetings, "Doklad.Username");
-            this.tbPassword.DataBindings.Add("Text", this.appSetings, "Doklad.Password");
+            tbTogglApiKey.DataBindings.Add("Text", appSetings, "Toggl.ApiKey");
+            tbUserName.DataBindings.Add("Text", appSetings, "Doklad.Username");
+            tbPassword.DataBindings.Add("Text", appSetings, "Doklad.Password");
 
-            this.dtpDateFrom.DataBindings.Add("Value", this.appSetings, "DateFrom");
-            this.dtpDateTo.DataBindings.Add("Value", this.appSetings, "DateTo");
+            dtpDateFrom.DataBindings.Add("Value", appSetings, "DateFrom");
+            dtpDateTo.DataBindings.Add("Value", appSetings, "DateTo");
 
-            this.cbTypCeny.DataSource = this.localizableEnumFactory.CreateList<PriceTypeEnum>();
-            this.cbTypCeny.DataBindings.Add(new Binding("SelectedValue", this.appSetings, "TypCeny"));
+            cbTypCeny.DataSource = localizableEnumFactory.CreateList<PriceTypeEnum>();
+            cbTypCeny.DataBindings.Add(new Binding("SelectedValue", appSetings, "TypCeny"));
 
-            this.cbDruhSazby.DataSource = this.localizableEnumFactory.CreateList<VatRateTypeEnum>();
-            this.cbDruhSazby.DataBindings.Add(new Binding("SelectedValue", this.appSetings, "DruhSazby"));
+            cbDruhSazby.DataSource = localizableEnumFactory.CreateList<VatRateTypeEnum>();
+            cbDruhSazby.DataBindings.Add(new Binding("SelectedValue", appSetings, "DruhSazby"));
 
-            this.cbMena.DataSource = this.localizableEnumFactory.CreateList<CurrencyEnum>();
-            this.cbMena.DataBindings.Add(new Binding("SelectedValue", this.appSetings, "Currency"));
+            cbMena.DataSource = localizableEnumFactory.CreateList<CurrencyEnum>();
+            cbMena.DataBindings.Add(new Binding("SelectedValue", appSetings, "Currency"));
 
-            this.tbJednotka.DataBindings.Add("Text", this.appSetings, "Unit");
+            tbJednotka.DataBindings.Add("Text", appSetings, "Unit");
 
-            this.chbAutoSave.DataBindings.Add("Checked", this.appSetings, "AutoSaveSettings");
+            chbAutoSave.DataBindings.Add("Checked", appSetings, "AutoSaveSettings");
+            chbAutoChangePeriod.DataBindings.Add("Checked", appSetings, "AutoUpdateInterval");
         }
 
         private void OnSaveClick(object sender, EventArgs e)
         {
-            this.settingsService.Save(this.appSetings);
+            settingsService.Save(appSetings);
         }
     }
 }
