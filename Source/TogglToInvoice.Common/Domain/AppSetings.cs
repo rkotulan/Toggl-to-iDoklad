@@ -47,6 +47,8 @@ namespace TogglToInvoice.Common.Domain
 
         public bool AutoUpdateInterval { get; set; }
 
+        public GroupTimeEntryBy GroupTimeEntryBy { get; set; }
+
         [NotifyPropertyChanged]
         public class DokladCfg
         {

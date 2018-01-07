@@ -42,7 +42,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.tbTogglApiKey = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.tbUserName = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.cbGroupBy = new Syncfusion.Windows.Forms.Tools.ComboBoxAdv();
             this.tbPassword = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
@@ -59,14 +61,15 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.chbAutoSave = new System.Windows.Forms.CheckBox();
+            this.chbAutoChangePeriod = new System.Windows.Forms.CheckBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnSaveSettings = new Syncfusion.Windows.Forms.ButtonAdv();
             this.btnImport = new Syncfusion.Windows.Forms.ButtonAdv();
-            this.chbAutoChangePeriod = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbTogglApiKey)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbUserName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbGroupBy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPassword)).BeginInit();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -85,7 +88,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(492, 372);
+            this.panel1.Size = new System.Drawing.Size(492, 399);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -102,18 +105,21 @@
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.tbTogglApiKey, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.tbUserName, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.cbGroupBy, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.tbPassword, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label13, 0, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowCount = 7;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(492, 372);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(492, 399);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel3
@@ -123,8 +129,8 @@
             this.panel3.ForeColor = System.Drawing.Color.Silver;
             this.panel3.Location = new System.Drawing.Point(490, 3);
             this.panel3.Name = "panel3";
-            this.tableLayoutPanel1.SetRowSpan(this.panel3, 6);
-            this.panel3.Size = new System.Drawing.Size(1, 366);
+            this.tableLayoutPanel1.SetRowSpan(this.panel3, 7);
+            this.panel3.Size = new System.Drawing.Size(1, 393);
             this.panel3.TabIndex = 0;
             // 
             // label2
@@ -209,6 +215,30 @@
             this.tbUserName.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Default;
             this.tbUserName.TabIndex = 1;
             // 
+            // cbGroupBy
+            // 
+            this.cbGroupBy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbGroupBy.BeforeTouchSize = new System.Drawing.Size(331, 28);
+            this.cbGroupBy.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
+            this.cbGroupBy.DisplayMember = "Text";
+            this.cbGroupBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGroupBy.FlatStyle = Syncfusion.Windows.Forms.Tools.ComboFlatStyle.Flat;
+            this.cbGroupBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cbGroupBy.Items.AddRange(new object[] {
+            "klientů",
+            "projektů"});
+            this.cbGroupBy.Location = new System.Drawing.Point(153, 208);
+            this.cbGroupBy.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.cbGroupBy.Name = "cbGroupBy";
+            this.cbGroupBy.Size = new System.Drawing.Size(331, 28);
+            this.cbGroupBy.Style = Syncfusion.Windows.Forms.VisualStyle.Metro;
+            this.cbGroupBy.TabIndex = 0;
+            this.cbGroupBy.Text = "projektů";
+            this.cbGroupBy.UseBackColor = true;
+            this.cbGroupBy.UseMetroButtonColor = true;
+            this.cbGroupBy.UseMetroColorsInActiveMode = true;
+            this.cbGroupBy.ValueMember = "Value";
+            // 
             // tbPassword
             // 
             this.tbPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -224,13 +254,24 @@
             this.tbPassword.TabIndex = 2;
             this.tbPassword.UseSystemPasswordChar = true;
             // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label13.Location = new System.Drawing.Point(3, 210);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(144, 20);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "Sekupit podle";
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.tableLayoutPanel2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(492, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(436, 372);
+            this.panel2.Size = new System.Drawing.Size(436, 399);
             this.panel2.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -267,7 +308,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(436, 372);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(436, 399);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // label6
@@ -337,7 +378,7 @@
             this.dtpDateFrom.DropDownImage = null;
             this.dtpDateFrom.DropDownNormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
             this.dtpDateFrom.DropDownPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-            this.dtpDateFrom.DropDownSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+            this.dtpDateFrom.DropDownSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(191)))), ((int)(((byte)(237)))));
             this.dtpDateFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dtpDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDateFrom.Location = new System.Drawing.Point(103, 126);
@@ -364,7 +405,7 @@
             this.dtpDateTo.DropDownImage = null;
             this.dtpDateTo.DropDownNormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
             this.dtpDateTo.DropDownPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-            this.dtpDateTo.DropDownSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+            this.dtpDateTo.DropDownSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(191)))), ((int)(((byte)(237)))));
             this.dtpDateTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dtpDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDateTo.Location = new System.Drawing.Point(103, 166);
@@ -498,13 +539,25 @@
             this.chbAutoSave.Text = "Automaticky ukládat nastavení při importu";
             this.chbAutoSave.UseVisualStyleBackColor = true;
             // 
+            // chbAutoChangePeriod
+            // 
+            this.chbAutoChangePeriod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.chbAutoChangePeriod.AutoSize = true;
+            this.chbAutoChangePeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.chbAutoChangePeriod.Location = new System.Drawing.Point(103, 328);
+            this.chbAutoChangePeriod.Name = "chbAutoChangePeriod";
+            this.chbAutoChangePeriod.Size = new System.Drawing.Size(330, 24);
+            this.chbAutoChangePeriod.TabIndex = 6;
+            this.chbAutoChangePeriod.Text = "Automaticky posunout časový interval";
+            this.chbAutoChangePeriod.UseVisualStyleBackColor = true;
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(50)))), ((int)(((byte)(72)))));
             this.panel4.Controls.Add(this.btnSaveSettings);
             this.panel4.Controls.Add(this.btnImport);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 372);
+            this.panel4.Location = new System.Drawing.Point(0, 399);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(928, 73);
             this.panel4.TabIndex = 4;
@@ -550,18 +603,6 @@
             this.btnImport.UseVisualStyleBackColor = true;
             this.btnImport.Click += new System.EventHandler(this.OnImportClick);
             // 
-            // chbAutoChangePeriod
-            // 
-            this.chbAutoChangePeriod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.chbAutoChangePeriod.AutoSize = true;
-            this.chbAutoChangePeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chbAutoChangePeriod.Location = new System.Drawing.Point(103, 328);
-            this.chbAutoChangePeriod.Name = "chbAutoChangePeriod";
-            this.chbAutoChangePeriod.Size = new System.Drawing.Size(330, 24);
-            this.chbAutoChangePeriod.TabIndex = 6;
-            this.chbAutoChangePeriod.Text = "Automaticky posunout časový interval";
-            this.chbAutoChangePeriod.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -585,7 +626,7 @@
             captionLabel1.Size = new System.Drawing.Size(160, 24);
             captionLabel1.Text = "Toggl to iDoklad";
             this.CaptionLabels.Add(captionLabel1);
-            this.ClientSize = new System.Drawing.Size(928, 445);
+            this.ClientSize = new System.Drawing.Size(928, 472);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
@@ -601,6 +642,7 @@
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbTogglApiKey)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbUserName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbGroupBy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPassword)).EndInit();
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -649,6 +691,8 @@
         private Syncfusion.Windows.Forms.Tools.TextBoxExt tbJednotka;
         private System.Windows.Forms.CheckBox chbAutoSave;
         private System.Windows.Forms.CheckBox chbAutoChangePeriod;
+        private Syncfusion.Windows.Forms.Tools.ComboBoxAdv cbGroupBy;
+        private System.Windows.Forms.Label label13;
     }
 }
 

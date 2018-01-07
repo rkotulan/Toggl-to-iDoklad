@@ -16,12 +16,23 @@ namespace TogglToInvoice.Common.Services
 
             var minutes = timeSpan.TotalHours - Math.Truncate(timeSpan.TotalHours);
             var hours = timeSpan.TotalHours - minutes;
-            minutes = this.RoundMinUp(minutes);
+            minutes = this.RoundUpToQuarterHour(minutes);
 
             return hours + minutes;
         }
 
-        private double RoundMinUp(double val)
+        public double FormatToNerestHalfHour(double seconds)
+        {
+            var timeSpan = TimeSpan.FromSeconds(seconds);
+
+            var minutes = timeSpan.TotalHours - Math.Truncate(timeSpan.TotalHours);
+            var hours = timeSpan.TotalHours - minutes;
+            minutes = this.RoundUpToHalfHour(minutes);
+
+            return hours + minutes;
+        }
+
+        private double RoundUpToQuarterHour(double val)
         {
             if (val <= 0)
             {
@@ -41,6 +52,21 @@ namespace TogglToInvoice.Common.Services
             if (val <= 0.75)
             {
                 return 0.75;
+            }
+
+            return 1;
+        }
+
+        private double RoundUpToHalfHour(double val)
+        {
+            if (val <= 0)
+            {
+                return 0;
+            }
+
+            if (val <= 0.50)
+            {
+                return 0.50;
             }
 
             return 1;

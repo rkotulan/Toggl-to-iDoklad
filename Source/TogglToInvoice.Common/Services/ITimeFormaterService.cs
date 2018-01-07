@@ -9,5 +9,7 @@ namespace TogglToInvoice.Common.Services
     public interface ITimeFormaterService
     {
         double FormatToNerestQuarterHour(double seconds);
+
+        double FormatToNerestHalfHour(double seconds);
     }
 }

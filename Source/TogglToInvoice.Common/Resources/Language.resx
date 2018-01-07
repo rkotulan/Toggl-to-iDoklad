@@ -144,4 +144,10 @@
   <data name="CurrencyEnum_EUR" xml:space="preserve">
     <value>EUR</value>
   </data>
+  <data name="GroupTimeEntryBy_Clients" xml:space="preserve">
+    <value>klientů</value>
+  </data>
+  <data name="GroupTimeEntryBy_Projects" xml:space="preserve">
+    <value>projektů</value>
+  </data>
 </root>

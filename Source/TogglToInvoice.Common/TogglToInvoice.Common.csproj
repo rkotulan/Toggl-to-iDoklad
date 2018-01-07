@@ -77,8 +77,11 @@
     <Compile Include="Domain\BindableBase.cs" />
     <Compile Include="Domain\LogItem.cs" />
     <Compile Include="Enums\CurrencyEnum.cs" />
+    <Compile Include="Enums\GroupTimeEntryBy.cs" />
     <Compile Include="Enums\LogSeverity.cs" />
+    <Compile Include="Extensions\ListExtensions.cs" />
     <Compile Include="Extensions\TimeEntryExtenstions.cs" />
+    <Compile Include="Extensions\TogglCfgExtensions.cs" />
     <Compile Include="Facades\IImportFacade.cs" />
     <Compile Include="Infrastructure\BackgroundFacade\IBackgroundFacade.cs" />
     <Compile Include="Facades\ImportFacade.cs" />

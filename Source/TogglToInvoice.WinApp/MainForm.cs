@@ -79,6 +79,9 @@
             tbUserName.DataBindings.Add("Text", appSetings, "Doklad.Username");
             tbPassword.DataBindings.Add("Text", appSetings, "Doklad.Password");
 
+            cbGroupBy.DataSource = localizableEnumFactory.CreateList<GroupTimeEntryBy>();
+            cbGroupBy.DataBindings.Add(new Binding("SelectedValue", appSetings, "GroupTimeEntryBy"));
+
             dtpDateFrom.DataBindings.Add("Value", appSetings, "DateFrom");
             dtpDateTo.DataBindings.Add("Value", appSetings, "DateTo");
 
