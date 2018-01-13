@@ -83,6 +83,8 @@
     <Compile Include="Extensions\TimeEntryExtenstions.cs" />
     <Compile Include="Extensions\TogglCfgExtensions.cs" />
     <Compile Include="Facades\IImportFacade.cs" />
+    <Compile Include="Facades\IToggleProjectFacade.cs" />
+    <Compile Include="Facades\ToggleProjectFacade.cs" />
     <Compile Include="Infrastructure\BackgroundFacade\IBackgroundFacade.cs" />
     <Compile Include="Facades\ImportFacade.cs" />
     <Compile Include="Infrastructure\AssemblyFinder.cs" />

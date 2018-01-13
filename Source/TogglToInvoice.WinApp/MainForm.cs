@@ -1,6 +1,9 @@
 ﻿namespace TogglToInvoice.WinApp
 {
     using System;
+    using System.Collections.Generic;
+    using System.Drawing;
+    using System.Linq;
     using System.Windows.Forms;
 
     using Autofac;
@@ -9,8 +12,11 @@
 
     using Syncfusion.Windows.Forms;
 
+    using Toggl;
+
     using TogglToInvoice.Common.Domain;
     using TogglToInvoice.Common.Enums;
+    using TogglToInvoice.Common.Extensions;
     using TogglToInvoice.Common.Facades;
     using TogglToInvoice.Common.Infrastructure;
     using TogglToInvoice.Common.Infrastructure.LocalizableEnums;
@@ -24,6 +30,8 @@
 
         private readonly ISettingsService settingsService;
 
+        private bool projectLoaded = false;
+
         public MainForm(
             ISettingsService settingsService,
             ILocalizableEnumFactory localizableEnumFactory,
@@ -33,6 +41,18 @@
             this.settingsService = settingsService;
             this.localizableEnumFactory = localizableEnumFactory;
             InitializeComponent();
+
+            PrepareProjectCombo();
+        }
+
+        private void PrepareProjectCombo()
+        {
+            var projects = new List<Project>();
+            projects.Add(new Project { Id = 0, Name = "vše" });
+
+            cbProjekt.DisplayMember = "Name";
+            cbProjekt.ValueMember = "Id";
+            cbProjekt.DataSource = projects;
         }
 
         private void AutoSaveConfig()
@@ -98,11 +118,48 @@
 
             chbAutoSave.DataBindings.Add("Checked", appSetings, "AutoSaveSettings");
             chbAutoChangePeriod.DataBindings.Add("Checked", appSetings, "AutoUpdateInterval");
+
+            cbProjekt.DataBindings.Add(new Binding("SelectedItem", appSetings, "Project"));
         }
 
         private void OnSaveClick(object sender, EventArgs e)
         {
             settingsService.Save(appSetings);
+        }
+
+        private void OnProjektDropDown(object sender, EventArgs e)
+        {
+            if (!projectLoaded)
+            {
+                Cursor = Cursors.WaitCursor;
+                using (var scope = Engine.Instance.BeginLifetimeScope())
+                {
+                    var projectFacade = scope.Resolve<IToggleProjectFacade>();
+
+                    try
+                    {
+                        var projects = projectFacade.GetProjects().OrderBy(x => x.Name).ToList();
+                        projects.Insert(0, new Project { Id = 0, Name = "vše" });
+                        cbProjekt.DataSource = projects;
+                        projectLoaded = true;
+                    }
+                    catch
+                    {
+                        MessageBoxAdv.MessageBoxStyle = MessageBoxAdv.Style.Metro;
+                        MessageBoxAdv.Show(
+                            this,
+                            "Během přihlášení ke službě Toggl, nastala chyba.",
+                            "Chyba",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
+                }
+
+                Cursor = Cursors.Default;
+            }
+            
+            cbProjekt.ListBox.AutoSize = false;
+            cbProjekt.ListBox.Size = new Size(cbProjekt.ListBox.Size.Width, 170);
         }
     }
 }

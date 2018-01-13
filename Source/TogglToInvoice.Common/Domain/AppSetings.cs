@@ -1,16 +1,14 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="AppSetings.cs" company="Rudolf Kotulán">
-//   Copyright © Rudolf Kotulán All Rights Reserved
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-namespace TogglToInvoice.Common.Domain
+﻿namespace TogglToInvoice.Common.Domain
 {
     using System;
 
     using IdokladSdk.Enums;
 
+    using Newtonsoft.Json;
+
     using PostSharp.Patterns.Model;
+
+    using Toggl;
 
     using TogglToInvoice.Common.Enums;
 
@@ -19,42 +17,45 @@ namespace TogglToInvoice.Common.Domain
     {
         public AppSetings()
         {
-            this.Toggl = new TogglCfg();
-            this.Doklad = new DokladCfg();
+            Toggl = new TogglCfg();
+            Doklad = new DokladCfg();
 
-            this.DateFrom = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
-            this.DateTo = DateTime.Today;
-            this.AutoSaveSettings = true;
+            DateFrom = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+            DateTo = DateTime.Today;
+            AutoSaveSettings = true;
         }
-
-        public DokladCfg Doklad { get; private set; }
-
-        public TogglCfg Toggl { get; private set; }
-
-        public PriceTypeEnum TypCeny { get; set; }
-
-        public VatRateTypeEnum DruhSazby { get; set; }
-
-        public DateTime DateFrom { get; set; }
-
-        public DateTime DateTo { get; set; }
-
-        public string Unit { get; set; }
-
-        public CurrencyEnum Currency { get; set; }
 
         public bool AutoSaveSettings { get; set; }
 
         public bool AutoUpdateInterval { get; set; }
 
+        public CurrencyEnum Currency { get; set; }
+
+        public DateTime DateFrom { get; set; }
+
+        public DateTime DateTo { get; set; }
+
+        public DokladCfg Doklad { get; private set; }
+
+        public VatRateTypeEnum DruhSazby { get; set; }
+
         public GroupTimeEntryBy GroupTimeEntryBy { get; set; }
+
+        [JsonIgnore]
+        public Project Project { get; set; }
+
+        public TogglCfg Toggl { get; private set; }
+
+        public PriceTypeEnum TypCeny { get; set; }
+
+        public string Unit { get; set; }
 
         [NotifyPropertyChanged]
         public class DokladCfg
         {
-            public string Username { get; set; }
-
             public string Password { get; set; }
+
+            public string Username { get; set; }
         }
 
         [NotifyPropertyChanged]

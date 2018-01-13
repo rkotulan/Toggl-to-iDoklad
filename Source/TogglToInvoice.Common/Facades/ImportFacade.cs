@@ -55,6 +55,7 @@ namespace TogglToInvoice.Common.Facades
                 $"Začátek importu z Toggl za období {this.appSetings.DateFrom.Date:d} - {this.appSetings.DateTo.Date:d}");
 
             var clients = this.GetClients();
+
             var projects = this.GetProjects();
             var invoiceCount = 0;
 
@@ -243,6 +244,11 @@ namespace TogglToInvoice.Common.Facades
 
         private IList<Project> GetProjects()
         {
+            if (appSetings.Project != null && appSetings.Project.ClientId > 0)
+            {
+                return new List<Project> { appSetings.Project };
+            }
+
             var result = new List<Project>();
             var keys = this.appSetings.Toggl.GetApiKeys();
             foreach (var apiKey in keys)
@@ -271,6 +277,11 @@ namespace TogglToInvoice.Common.Facades
                 var prams = new TimeEntryParams();
                 prams.StartDate = Convert.ToDateTime(this.appSetings.DateFrom.Date);
                 prams.EndDate = Convert.ToDateTime(this.appSetings.DateTo.Date.AddDays(1));
+
+                if (appSetings.Project != null && appSetings.Project.Id > 0)
+                {
+                    prams.ProjectId = appSetings.Project.Id;
+                }
 
                 var timeEntries = timeService.List(prams).Where(t => t.IsBillable.Value).ToList();
                 result.AddRange(timeEntries);

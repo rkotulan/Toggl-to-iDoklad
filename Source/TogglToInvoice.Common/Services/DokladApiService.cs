@@ -1,13 +1,6 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="DokladApiService.cs" company="Rudolf Kotulán">
-//   Copyright © Rudolf Kotulán All Rights Reserved
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-namespace TogglToInvoice.Common.Services
+﻿namespace TogglToInvoice.Common.Services
 {
     using IdokladSdk;
-    using IdokladSdk.Clients;
     using IdokladSdk.Clients.Auth;
 
     public class DokladApiService : IDokladApiService

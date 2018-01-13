@@ -37,15 +37,19 @@ namespace TogglToInvoice.Common.Services
         private string GetConfigFullName()
         {
             string roaming = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-
             var path = Path.Combine(roaming, "TogglToInvoice");
+
 
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
             }
 
+#if DEBUG
+            return Path.Combine(path, "AppConfig.dev.json");
+#else
             return Path.Combine(path, "AppConfig.json");
+#endif
         }
     }
 }

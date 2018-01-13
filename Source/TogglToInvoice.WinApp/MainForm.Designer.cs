@@ -45,6 +45,8 @@
             this.cbGroupBy = new Syncfusion.Windows.Forms.Tools.ComboBoxAdv();
             this.tbPassword = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.cbProjekt = new Syncfusion.Windows.Forms.Tools.ComboBoxAdv();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
@@ -71,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbUserName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbGroupBy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbProjekt)).BeginInit();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtpDateFrom)).BeginInit();
@@ -105,13 +108,15 @@
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.tbTogglApiKey, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.tbUserName, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.cbGroupBy, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.tbPassword, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label13, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.chbAutoChangePeriod, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.chbAutoSave, 1, 6);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 7;
+            this.tableLayoutPanel1.RowCount = 9;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
@@ -129,7 +134,7 @@
             this.panel3.ForeColor = System.Drawing.Color.Silver;
             this.panel3.Location = new System.Drawing.Point(490, 3);
             this.panel3.Name = "panel3";
-            this.tableLayoutPanel1.SetRowSpan(this.panel3, 7);
+            this.tableLayoutPanel1.SetRowSpan(this.panel3, 9);
             this.panel3.Size = new System.Drawing.Size(1, 393);
             this.panel3.TabIndex = 0;
             // 
@@ -192,7 +197,7 @@
             // tbTogglApiKey
             // 
             this.tbTogglApiKey.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbTogglApiKey.BeforeTouchSize = new System.Drawing.Size(330, 26);
+            this.tbTogglApiKey.BeforeTouchSize = new System.Drawing.Size(308, 26);
             this.tbTogglApiKey.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbTogglApiKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tbTogglApiKey.Location = new System.Drawing.Point(153, 47);
@@ -205,7 +210,7 @@
             // tbUserName
             // 
             this.tbUserName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbUserName.BeforeTouchSize = new System.Drawing.Size(330, 26);
+            this.tbUserName.BeforeTouchSize = new System.Drawing.Size(308, 26);
             this.tbUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tbUserName.Location = new System.Drawing.Point(153, 127);
@@ -218,7 +223,7 @@
             // cbGroupBy
             // 
             this.cbGroupBy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbGroupBy.BeforeTouchSize = new System.Drawing.Size(331, 28);
+            this.cbGroupBy.BeforeTouchSize = new System.Drawing.Size(308, 28);
             this.cbGroupBy.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
             this.cbGroupBy.DisplayMember = "Text";
             this.cbGroupBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -227,10 +232,10 @@
             this.cbGroupBy.Items.AddRange(new object[] {
             "klientů",
             "projektů"});
-            this.cbGroupBy.Location = new System.Drawing.Point(153, 208);
+            this.cbGroupBy.Location = new System.Drawing.Point(125, 288);
             this.cbGroupBy.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.cbGroupBy.Name = "cbGroupBy";
-            this.cbGroupBy.Size = new System.Drawing.Size(331, 28);
+            this.cbGroupBy.Size = new System.Drawing.Size(308, 28);
             this.cbGroupBy.Style = Syncfusion.Windows.Forms.VisualStyle.Metro;
             this.cbGroupBy.TabIndex = 0;
             this.cbGroupBy.Text = "projektů";
@@ -242,7 +247,7 @@
             // tbPassword
             // 
             this.tbPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbPassword.BeforeTouchSize = new System.Drawing.Size(330, 26);
+            this.tbPassword.BeforeTouchSize = new System.Drawing.Size(308, 26);
             this.tbPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tbPassword.Location = new System.Drawing.Point(153, 167);
@@ -259,11 +264,43 @@
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label13.Location = new System.Drawing.Point(3, 210);
+            this.label13.Location = new System.Drawing.Point(3, 290);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(144, 20);
+            this.label13.Size = new System.Drawing.Size(116, 20);
             this.label13.TabIndex = 3;
-            this.label13.Text = "Sekupit podle";
+            this.label13.Text = "Seskupit podle";
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label14.Location = new System.Drawing.Point(3, 330);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(116, 20);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "Projekt";
+            // 
+            // cbProjekt
+            // 
+            this.cbProjekt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbProjekt.BeforeTouchSize = new System.Drawing.Size(308, 28);
+            this.cbProjekt.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
+            this.cbProjekt.DisplayMember = "Text";
+            this.cbProjekt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbProjekt.FlatStyle = Syncfusion.Windows.Forms.Tools.ComboFlatStyle.Flat;
+            this.cbProjekt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cbProjekt.Location = new System.Drawing.Point(125, 328);
+            this.cbProjekt.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.cbProjekt.Name = "cbProjekt";
+            this.cbProjekt.Size = new System.Drawing.Size(308, 28);
+            this.cbProjekt.Style = Syncfusion.Windows.Forms.VisualStyle.Metro;
+            this.cbProjekt.TabIndex = 0;
+            this.cbProjekt.UseBackColor = true;
+            this.cbProjekt.UseMetroButtonColor = true;
+            this.cbProjekt.UseMetroColorsInActiveMode = true;
+            this.cbProjekt.ValueMember = "Value";
+            this.cbProjekt.DropDown += new System.EventHandler(this.OnProjektDropDown);
             // 
             // panel2
             // 
@@ -277,7 +314,7 @@
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.label6, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label8, 0, 0);
@@ -288,12 +325,14 @@
             this.tableLayoutPanel2.Controls.Add(this.dtpDateTo, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.tbJednotka, 1, 6);
             this.tableLayoutPanel2.Controls.Add(this.cbTypCeny, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.cbProjekt, 1, 8);
+            this.tableLayoutPanel2.Controls.Add(this.label14, 0, 8);
+            this.tableLayoutPanel2.Controls.Add(this.label13, 0, 7);
             this.tableLayoutPanel2.Controls.Add(this.cbDruhSazby, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.cbMena, 1, 5);
             this.tableLayoutPanel2.Controls.Add(this.label11, 0, 5);
             this.tableLayoutPanel2.Controls.Add(this.label12, 0, 6);
-            this.tableLayoutPanel2.Controls.Add(this.chbAutoSave, 1, 7);
-            this.tableLayoutPanel2.Controls.Add(this.chbAutoChangePeriod, 1, 8);
+            this.tableLayoutPanel2.Controls.Add(this.cbGroupBy, 1, 7);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -318,7 +357,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label6.Location = new System.Drawing.Point(3, 50);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 20);
+            this.label6.Size = new System.Drawing.Size(116, 20);
             this.label6.TabIndex = 3;
             this.label6.Text = "Typ ceny";
             // 
@@ -341,7 +380,7 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label9.Location = new System.Drawing.Point(3, 130);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(94, 20);
+            this.label9.Size = new System.Drawing.Size(116, 20);
             this.label9.TabIndex = 3;
             this.label9.Text = "Datum od";
             // 
@@ -352,7 +391,7 @@
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label10.Location = new System.Drawing.Point(3, 170);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(94, 20);
+            this.label10.Size = new System.Drawing.Size(116, 20);
             this.label10.TabIndex = 3;
             this.label10.Text = "Datum do";
             // 
@@ -363,7 +402,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label7.Location = new System.Drawing.Point(3, 90);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(94, 20);
+            this.label7.Size = new System.Drawing.Size(116, 20);
             this.label7.TabIndex = 3;
             this.label7.Text = "Druh sazby";
             // 
@@ -381,12 +420,12 @@
             this.dtpDateFrom.DropDownSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(191)))), ((int)(((byte)(237)))));
             this.dtpDateFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dtpDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateFrom.Location = new System.Drawing.Point(103, 126);
+            this.dtpDateFrom.Location = new System.Drawing.Point(125, 126);
             this.dtpDateFrom.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
             this.dtpDateFrom.MinValue = new System.DateTime(((long)(0)));
             this.dtpDateFrom.Name = "dtpDateFrom";
             this.dtpDateFrom.ShowCheckBox = false;
-            this.dtpDateFrom.Size = new System.Drawing.Size(330, 28);
+            this.dtpDateFrom.Size = new System.Drawing.Size(308, 28);
             this.dtpDateFrom.Style = Syncfusion.Windows.Forms.VisualStyle.Metro;
             this.dtpDateFrom.TabIndex = 2;
             this.dtpDateFrom.ThemedChildControls = true;
@@ -408,12 +447,12 @@
             this.dtpDateTo.DropDownSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(191)))), ((int)(((byte)(237)))));
             this.dtpDateTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dtpDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateTo.Location = new System.Drawing.Point(103, 166);
+            this.dtpDateTo.Location = new System.Drawing.Point(125, 166);
             this.dtpDateTo.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
             this.dtpDateTo.MinValue = new System.DateTime(((long)(0)));
             this.dtpDateTo.Name = "dtpDateTo";
             this.dtpDateTo.ShowCheckBox = false;
-            this.dtpDateTo.Size = new System.Drawing.Size(330, 28);
+            this.dtpDateTo.Size = new System.Drawing.Size(308, 28);
             this.dtpDateTo.Style = Syncfusion.Windows.Forms.VisualStyle.Metro;
             this.dtpDateTo.TabIndex = 3;
             this.dtpDateTo.ThemedChildControls = true;
@@ -425,20 +464,20 @@
             // tbJednotka
             // 
             this.tbJednotka.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbJednotka.BeforeTouchSize = new System.Drawing.Size(330, 26);
+            this.tbJednotka.BeforeTouchSize = new System.Drawing.Size(308, 26);
             this.tbJednotka.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbJednotka.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbJednotka.Location = new System.Drawing.Point(103, 247);
+            this.tbJednotka.Location = new System.Drawing.Point(125, 247);
             this.tbJednotka.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
             this.tbJednotka.Name = "tbJednotka";
-            this.tbJednotka.Size = new System.Drawing.Size(330, 26);
+            this.tbJednotka.Size = new System.Drawing.Size(308, 26);
             this.tbJednotka.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Default;
             this.tbJednotka.TabIndex = 5;
             // 
             // cbTypCeny
             // 
             this.cbTypCeny.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbTypCeny.BeforeTouchSize = new System.Drawing.Size(330, 28);
+            this.cbTypCeny.BeforeTouchSize = new System.Drawing.Size(308, 28);
             this.cbTypCeny.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
             this.cbTypCeny.DisplayMember = "Text";
             this.cbTypCeny.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -447,10 +486,10 @@
             this.cbTypCeny.Items.AddRange(new object[] {
             "s daní",
             "bez daně"});
-            this.cbTypCeny.Location = new System.Drawing.Point(103, 48);
+            this.cbTypCeny.Location = new System.Drawing.Point(125, 48);
             this.cbTypCeny.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.cbTypCeny.Name = "cbTypCeny";
-            this.cbTypCeny.Size = new System.Drawing.Size(330, 28);
+            this.cbTypCeny.Size = new System.Drawing.Size(308, 28);
             this.cbTypCeny.Style = Syncfusion.Windows.Forms.VisualStyle.Metro;
             this.cbTypCeny.TabIndex = 0;
             this.cbTypCeny.Text = "s daní";
@@ -462,7 +501,7 @@
             // cbDruhSazby
             // 
             this.cbDruhSazby.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbDruhSazby.BeforeTouchSize = new System.Drawing.Size(330, 28);
+            this.cbDruhSazby.BeforeTouchSize = new System.Drawing.Size(308, 28);
             this.cbDruhSazby.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
             this.cbDruhSazby.DisplayMember = "Text";
             this.cbDruhSazby.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -473,10 +512,10 @@
             "základní",
             "nulová",
             "snížená 2"});
-            this.cbDruhSazby.Location = new System.Drawing.Point(103, 88);
+            this.cbDruhSazby.Location = new System.Drawing.Point(125, 88);
             this.cbDruhSazby.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.cbDruhSazby.Name = "cbDruhSazby";
-            this.cbDruhSazby.Size = new System.Drawing.Size(330, 28);
+            this.cbDruhSazby.Size = new System.Drawing.Size(308, 28);
             this.cbDruhSazby.Style = Syncfusion.Windows.Forms.VisualStyle.Metro;
             this.cbDruhSazby.TabIndex = 1;
             this.cbDruhSazby.Text = "snížená ";
@@ -488,16 +527,16 @@
             // cbMena
             // 
             this.cbMena.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbMena.BeforeTouchSize = new System.Drawing.Size(330, 28);
+            this.cbMena.BeforeTouchSize = new System.Drawing.Size(308, 28);
             this.cbMena.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
             this.cbMena.DisplayMember = "Text";
             this.cbMena.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMena.FlatStyle = Syncfusion.Windows.Forms.Tools.ComboFlatStyle.Flat;
             this.cbMena.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cbMena.Location = new System.Drawing.Point(103, 208);
+            this.cbMena.Location = new System.Drawing.Point(125, 208);
             this.cbMena.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.cbMena.Name = "cbMena";
-            this.cbMena.Size = new System.Drawing.Size(330, 28);
+            this.cbMena.Size = new System.Drawing.Size(308, 28);
             this.cbMena.Style = Syncfusion.Windows.Forms.VisualStyle.Metro;
             this.cbMena.TabIndex = 4;
             this.cbMena.UseBackColor = true;
@@ -512,7 +551,7 @@
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label11.Location = new System.Drawing.Point(3, 210);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(94, 20);
+            this.label11.Size = new System.Drawing.Size(116, 20);
             this.label11.TabIndex = 3;
             this.label11.Text = "Měna";
             // 
@@ -523,7 +562,7 @@
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label12.Location = new System.Drawing.Point(3, 250);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(94, 20);
+            this.label12.Size = new System.Drawing.Size(116, 20);
             this.label12.TabIndex = 3;
             this.label12.Text = "Jednotka";
             // 
@@ -532,9 +571,9 @@
             this.chbAutoSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.chbAutoSave.AutoSize = true;
             this.chbAutoSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chbAutoSave.Location = new System.Drawing.Point(103, 288);
+            this.chbAutoSave.Location = new System.Drawing.Point(153, 248);
             this.chbAutoSave.Name = "chbAutoSave";
-            this.chbAutoSave.Size = new System.Drawing.Size(330, 24);
+            this.chbAutoSave.Size = new System.Drawing.Size(331, 24);
             this.chbAutoSave.TabIndex = 6;
             this.chbAutoSave.Text = "Automaticky ukládat nastavení při importu";
             this.chbAutoSave.UseVisualStyleBackColor = true;
@@ -544,9 +583,9 @@
             this.chbAutoChangePeriod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.chbAutoChangePeriod.AutoSize = true;
             this.chbAutoChangePeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chbAutoChangePeriod.Location = new System.Drawing.Point(103, 328);
+            this.chbAutoChangePeriod.Location = new System.Drawing.Point(153, 288);
             this.chbAutoChangePeriod.Name = "chbAutoChangePeriod";
-            this.chbAutoChangePeriod.Size = new System.Drawing.Size(330, 24);
+            this.chbAutoChangePeriod.Size = new System.Drawing.Size(331, 24);
             this.chbAutoChangePeriod.TabIndex = 6;
             this.chbAutoChangePeriod.Text = "Automaticky posunout časový interval";
             this.chbAutoChangePeriod.UseVisualStyleBackColor = true;
@@ -644,6 +683,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbUserName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbGroupBy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbProjekt)).EndInit();
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -693,6 +733,8 @@
         private System.Windows.Forms.CheckBox chbAutoChangePeriod;
         private Syncfusion.Windows.Forms.Tools.ComboBoxAdv cbGroupBy;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private Syncfusion.Windows.Forms.Tools.ComboBoxAdv cbProjekt;
     }
 }
 
