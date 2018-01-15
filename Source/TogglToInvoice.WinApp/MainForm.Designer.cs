@@ -42,8 +42,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.tbTogglApiKey = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.tbUserName = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
-            this.cbGroupBy = new Syncfusion.Windows.Forms.Tools.ComboBoxAdv();
             this.tbPassword = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.chbAutoChangePeriod = new System.Windows.Forms.CheckBox();
+            this.chbAutoSave = new System.Windows.Forms.CheckBox();
+            this.cbGroupBy = new Syncfusion.Windows.Forms.Tools.ComboBoxAdv();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.cbProjekt = new Syncfusion.Windows.Forms.Tools.ComboBoxAdv();
@@ -62,8 +64,6 @@
             this.cbMena = new Syncfusion.Windows.Forms.Tools.ComboBoxAdv();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.chbAutoSave = new System.Windows.Forms.CheckBox();
-            this.chbAutoChangePeriod = new System.Windows.Forms.CheckBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnSaveSettings = new Syncfusion.Windows.Forms.ButtonAdv();
             this.btnImport = new Syncfusion.Windows.Forms.ButtonAdv();
@@ -71,8 +71,8 @@
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbTogglApiKey)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbUserName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbGroupBy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbGroupBy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbProjekt)).BeginInit();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -220,6 +220,45 @@
             this.tbUserName.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Default;
             this.tbUserName.TabIndex = 1;
             // 
+            // tbPassword
+            // 
+            this.tbPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbPassword.BeforeTouchSize = new System.Drawing.Size(308, 26);
+            this.tbPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tbPassword.Location = new System.Drawing.Point(153, 167);
+            this.tbPassword.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '●';
+            this.tbPassword.Size = new System.Drawing.Size(331, 26);
+            this.tbPassword.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Default;
+            this.tbPassword.TabIndex = 2;
+            this.tbPassword.UseSystemPasswordChar = true;
+            // 
+            // chbAutoChangePeriod
+            // 
+            this.chbAutoChangePeriod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.chbAutoChangePeriod.AutoSize = true;
+            this.chbAutoChangePeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.chbAutoChangePeriod.Location = new System.Drawing.Point(153, 288);
+            this.chbAutoChangePeriod.Name = "chbAutoChangePeriod";
+            this.chbAutoChangePeriod.Size = new System.Drawing.Size(331, 24);
+            this.chbAutoChangePeriod.TabIndex = 6;
+            this.chbAutoChangePeriod.Text = "Automaticky posunout časový interval";
+            this.chbAutoChangePeriod.UseVisualStyleBackColor = true;
+            // 
+            // chbAutoSave
+            // 
+            this.chbAutoSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.chbAutoSave.AutoSize = true;
+            this.chbAutoSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.chbAutoSave.Location = new System.Drawing.Point(153, 248);
+            this.chbAutoSave.Name = "chbAutoSave";
+            this.chbAutoSave.Size = new System.Drawing.Size(331, 24);
+            this.chbAutoSave.TabIndex = 6;
+            this.chbAutoSave.Text = "Automaticky ukládat nastavení při importu";
+            this.chbAutoSave.UseVisualStyleBackColor = true;
+            // 
             // cbGroupBy
             // 
             this.cbGroupBy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -243,21 +282,6 @@
             this.cbGroupBy.UseMetroButtonColor = true;
             this.cbGroupBy.UseMetroColorsInActiveMode = true;
             this.cbGroupBy.ValueMember = "Value";
-            // 
-            // tbPassword
-            // 
-            this.tbPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbPassword.BeforeTouchSize = new System.Drawing.Size(308, 26);
-            this.tbPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbPassword.Location = new System.Drawing.Point(153, 167);
-            this.tbPassword.Metrocolor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
-            this.tbPassword.Name = "tbPassword";
-            this.tbPassword.PasswordChar = '●';
-            this.tbPassword.Size = new System.Drawing.Size(331, 26);
-            this.tbPassword.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Default;
-            this.tbPassword.TabIndex = 2;
-            this.tbPassword.UseSystemPasswordChar = true;
             // 
             // label13
             // 
@@ -566,30 +590,6 @@
             this.label12.TabIndex = 3;
             this.label12.Text = "Jednotka";
             // 
-            // chbAutoSave
-            // 
-            this.chbAutoSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.chbAutoSave.AutoSize = true;
-            this.chbAutoSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chbAutoSave.Location = new System.Drawing.Point(153, 248);
-            this.chbAutoSave.Name = "chbAutoSave";
-            this.chbAutoSave.Size = new System.Drawing.Size(331, 24);
-            this.chbAutoSave.TabIndex = 6;
-            this.chbAutoSave.Text = "Automaticky ukládat nastavení při importu";
-            this.chbAutoSave.UseVisualStyleBackColor = true;
-            // 
-            // chbAutoChangePeriod
-            // 
-            this.chbAutoChangePeriod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.chbAutoChangePeriod.AutoSize = true;
-            this.chbAutoChangePeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chbAutoChangePeriod.Location = new System.Drawing.Point(153, 288);
-            this.chbAutoChangePeriod.Name = "chbAutoChangePeriod";
-            this.chbAutoChangePeriod.Size = new System.Drawing.Size(331, 24);
-            this.chbAutoChangePeriod.TabIndex = 6;
-            this.chbAutoChangePeriod.Text = "Automaticky posunout časový interval";
-            this.chbAutoChangePeriod.UseVisualStyleBackColor = true;
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(50)))), ((int)(((byte)(72)))));
@@ -681,8 +681,8 @@
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbTogglApiKey)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbUserName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbGroupBy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbGroupBy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbProjekt)).EndInit();
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
