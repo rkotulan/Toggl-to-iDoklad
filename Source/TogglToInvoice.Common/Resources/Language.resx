@@ -117,25 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="PriceTypeEnum_OnlyBase" xml:space="preserve">
+  <data name="PriceType_OnlyBase" xml:space="preserve">
     <value>jen základ</value>
   </data>
-  <data name="PriceTypeEnum_WithoutVat" xml:space="preserve">
+  <data name="PriceType_WithoutVat" xml:space="preserve">
     <value>bez daně</value>
   </data>
-  <data name="PriceTypeEnum_WithVat" xml:space="preserve">
+  <data name="PriceType_WithVat" xml:space="preserve">
     <value>s daní</value>
   </data>
-  <data name="VatRateTypeEnum_Basic" xml:space="preserve">
+  <data name="VatRateType_Basic" xml:space="preserve">
     <value>základní</value>
   </data>
-  <data name="VatRateTypeEnum_Reduced1" xml:space="preserve">
+  <data name="VatRateType_Reduced1" xml:space="preserve">
     <value>snížená</value>
   </data>
-  <data name="VatRateTypeEnum_Reduced2" xml:space="preserve">
+  <data name="VatRateType_Reduced2" xml:space="preserve">
     <value>snížená 2</value>
   </data>
-  <data name="VatRateTypeEnum_Zero" xml:space="preserve">
+  <data name="VatRateType_Zero" xml:space="preserve">
     <value>nulová</value>
   </data>
   <data name="CurrencyEnum_CZK" xml:space="preserve">

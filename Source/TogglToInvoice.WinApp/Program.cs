@@ -21,6 +21,8 @@ namespace TogglToInvoice.WinApp
         [STAThread]
         public static void Main()
         {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjgwNjI3QDMxMzgyZTMxMmUzMFVKNVA3ZWsrUU83cXY4Ri9mZ3gxS1RRYTNNTGgxNUNqRUU0QWFaZldCMjA9");
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 

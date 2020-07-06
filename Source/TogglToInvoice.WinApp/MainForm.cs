@@ -40,6 +40,7 @@
             this.appSetings = appSetings;
             this.settingsService = settingsService;
             this.localizableEnumFactory = localizableEnumFactory;
+
             InitializeComponent();
 
             PrepareProjectCombo();
@@ -105,10 +106,10 @@
             dtpDateFrom.DataBindings.Add("Value", appSetings, "DateFrom");
             dtpDateTo.DataBindings.Add("Value", appSetings, "DateTo");
 
-            cbTypCeny.DataSource = localizableEnumFactory.CreateList<PriceTypeEnum>();
+            cbTypCeny.DataSource = localizableEnumFactory.CreateList<PriceType>();
             cbTypCeny.DataBindings.Add(new Binding("SelectedValue", appSetings, "TypCeny"));
 
-            cbDruhSazby.DataSource = localizableEnumFactory.CreateList<VatRateTypeEnum>();
+            cbDruhSazby.DataSource = localizableEnumFactory.CreateList<VatRateType>();
             cbDruhSazby.DataBindings.Add(new Binding("SelectedValue", appSetings, "DruhSazby"));
 
             cbMena.DataSource = localizableEnumFactory.CreateList<CurrencyEnum>();

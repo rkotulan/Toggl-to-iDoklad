@@ -37,7 +37,7 @@
 
         public DokladCfg Doklad { get; private set; }
 
-        public VatRateTypeEnum DruhSazby { get; set; }
+        public VatRateType DruhSazby { get; set; }
 
         public GroupTimeEntryBy GroupTimeEntryBy { get; set; }
 
@@ -46,7 +46,7 @@
 
         public TogglCfg Toggl { get; private set; }
 
-        public PriceTypeEnum TypCeny { get; set; }
+        public PriceType TypCeny { get; set; }
 
         public string Unit { get; set; }
 

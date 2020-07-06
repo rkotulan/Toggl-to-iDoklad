@@ -10,6 +10,6 @@ namespace TogglToInvoice.Common.Services
 
     public interface IDokladApiService
     {
-        ApiExplorer GetApiExplorer(string username, string password);
+        DokladApi GetApiExplorer(string username, string password);
     }
 }

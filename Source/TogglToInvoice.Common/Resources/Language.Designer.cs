@@ -19,7 +19,7 @@ namespace TogglToInvoice.Common.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Language {
@@ -99,63 +99,63 @@ namespace TogglToInvoice.Common.Resources {
         /// <summary>
         ///   Looks up a localized string similar to jen základ.
         /// </summary>
-        internal static string PriceTypeEnum_OnlyBase {
+        internal static string PriceType_OnlyBase {
             get {
-                return ResourceManager.GetString("PriceTypeEnum_OnlyBase", resourceCulture);
+                return ResourceManager.GetString("PriceType_OnlyBase", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to bez daně.
         /// </summary>
-        internal static string PriceTypeEnum_WithoutVat {
+        internal static string PriceType_WithoutVat {
             get {
-                return ResourceManager.GetString("PriceTypeEnum_WithoutVat", resourceCulture);
+                return ResourceManager.GetString("PriceType_WithoutVat", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to s daní.
         /// </summary>
-        internal static string PriceTypeEnum_WithVat {
+        internal static string PriceType_WithVat {
             get {
-                return ResourceManager.GetString("PriceTypeEnum_WithVat", resourceCulture);
+                return ResourceManager.GetString("PriceType_WithVat", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to základní.
         /// </summary>
-        internal static string VatRateTypeEnum_Basic {
+        internal static string VatRateType_Basic {
             get {
-                return ResourceManager.GetString("VatRateTypeEnum_Basic", resourceCulture);
+                return ResourceManager.GetString("VatRateType_Basic", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to snížená.
         /// </summary>
-        internal static string VatRateTypeEnum_Reduced1 {
+        internal static string VatRateType_Reduced1 {
             get {
-                return ResourceManager.GetString("VatRateTypeEnum_Reduced1", resourceCulture);
+                return ResourceManager.GetString("VatRateType_Reduced1", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to snížená 2.
         /// </summary>
-        internal static string VatRateTypeEnum_Reduced2 {
+        internal static string VatRateType_Reduced2 {
             get {
-                return ResourceManager.GetString("VatRateTypeEnum_Reduced2", resourceCulture);
+                return ResourceManager.GetString("VatRateType_Reduced2", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to nulová.
         /// </summary>
-        internal static string VatRateTypeEnum_Zero {
+        internal static string VatRateType_Zero {
             get {
-                return ResourceManager.GetString("VatRateTypeEnum_Zero", resourceCulture);
+                return ResourceManager.GetString("VatRateType_Zero", resourceCulture);
             }
         }
     }
