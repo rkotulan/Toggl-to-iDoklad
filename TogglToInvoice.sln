@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TogglToInvoice.WinApp", "Source\TogglToInvoice.WinApp\TogglToInvoice.WinApp.csproj", "{153B4EFF-1857-4714-B027-C74EC583893F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TogglToInvoice.Common", "Source\TogglToInvoice.Common\TogglToInvoice.Common.csproj", "{07CD00EE-FB52-4EB6-8D45-AD2186CB64D0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TogglToInvoice.Common.Test", "Source\TogglToInvoice.Common.Test\TogglToInvoice.Common.Test.csproj", "{5AE4DA03-B02D-4990-BFA1-75174F1E32C6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TogglAPI.NetStandard", "Source\TogglAPI.Net-master\TogglAPI.NetStandard\TogglAPI.NetStandard.csproj", "{851F2B7F-1DE7-40BB-AE6F-D62134D9AE59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,8 +29,15 @@ Global
 		{5AE4DA03-B02D-4990-BFA1-75174F1E32C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AE4DA03-B02D-4990-BFA1-75174F1E32C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AE4DA03-B02D-4990-BFA1-75174F1E32C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{851F2B7F-1DE7-40BB-AE6F-D62134D9AE59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{851F2B7F-1DE7-40BB-AE6F-D62134D9AE59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{851F2B7F-1DE7-40BB-AE6F-D62134D9AE59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{851F2B7F-1DE7-40BB-AE6F-D62134D9AE59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BD975B7B-D067-4160-87B4-B3BA968AAC37}
 	EndGlobalSection
 EndGlobal

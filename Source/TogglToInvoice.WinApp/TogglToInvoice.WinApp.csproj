@@ -31,8 +31,8 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>4</ApplicationRevision>
-    <ApplicationVersion>1.5.0.%2a</ApplicationVersion>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.5.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -123,10 +123,6 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Toggl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\TogglAPI.Net.0.2\lib\net45\Toggl.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LogForm.cs">
@@ -185,6 +181,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TogglAPI.Net-master\TogglAPI.NetStandard\TogglAPI.NetStandard.csproj">
+      <Project>{851f2b7f-1de7-40bb-ae6f-d62134d9ae59}</Project>
+      <Name>TogglAPI.NetStandard</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TogglToInvoice.Common\TogglToInvoice.Common.csproj">
       <Project>{07cd00ee-fb52-4eb6-8d45-ad2186cb64d0}</Project>
       <Name>TogglToInvoice.Common</Name>
