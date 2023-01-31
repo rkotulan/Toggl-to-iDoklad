@@ -1,15 +1,19 @@
 ﻿namespace TogglToInvoice.Common.Services
 {
+    using System.Net.Http;
+
     using IdokladSdk;
-    using IdokladSdk.Authentication;
+    using IdokladSdk.Builders;
 
     public class DokladApiService : IDokladApiService
     {
         public DokladApi GetApiExplorer(string username, string password)
         {
-            var credentials = new ClientCredentialsAuthentication(username, password);
-            var apiContext = new ApiContext("Toggle to iDoklad", "2.0", credentials);
-            return new DokladApi(apiContext);
+            var apiContext = new DokladApiBuilder("Toggle to iDoklad", "2.0")
+                .AddClientCredentialsAuthentication(username, password)
+                .AddHttpClient(new HttpClient())
+                .Build();
+            return apiContext;
         }
     }
 }

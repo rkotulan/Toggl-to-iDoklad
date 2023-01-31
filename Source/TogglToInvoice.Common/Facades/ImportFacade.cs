@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Threading.Tasks;
 
     using IdokladSdk;
     using IdokladSdk.Models.Contact;
@@ -18,6 +19,7 @@
     using TogglToInvoice.Common.Extensions;
     using TogglToInvoice.Common.Infrastructure.BackgroundFacade;
     using TogglToInvoice.Common.Services;
+    using TogglToInvoice.Common.Shared;
 
     public class ImportFacade : IImportFacade
     {
@@ -56,7 +58,7 @@
                 progress++;
                 OnReportProgress(progress, timeEntriesGroupedByClient.Count);
 
-                if (GenerateInvoice(timeEntries, clients, projects))
+                if (AsyncHelper.RunSync(() => GenerateInvoice(timeEntries, clients, projects)))
                 {
                     invoiceCount++;
                 }
@@ -65,7 +67,7 @@
             AppLogger.AddInformation($"Konec impotu faktur, bylo importováno {invoiceCount} faktur.");
         }
 
-        private void CreateAndSaveInvoice(Client client, List<IssuedInvoiceItemPostModel> issuedInvoiceItems, IList<Project> projectsInInvoice)
+        private async System.Threading.Tasks.Task CreateAndSaveInvoice(Client client, List<IssuedInvoiceItemPostModel> issuedInvoiceItems, IList<Project> projectsInInvoice)
         {
             if (issuedInvoiceItems.Count == 0)
             {
@@ -74,7 +76,7 @@
 
             var api = dokladApiService.GetApiExplorer(appSetings.Doklad.Username, appSetings.Doklad.Password);
             
-            var contact = this.FindContactByName(client.Name, api);
+            var contact = await this.FindContactByNameAsync(client.Name, api);
             if (contact == null || !contact.Data.Items.Any())
             {
                 AppLogger.AddError($"Ve službě iDokald nebyl nalezen kontakt {client.Name}.");
@@ -82,7 +84,7 @@
             }
 
             var purchaser = contact.Data.Items.FirstOrDefault();
-            var invoice = api.IssuedInvoiceClient.Default().Data;
+            var invoice = (await api.IssuedInvoiceClient.DefaultAsync()).Data;
 
             invoice.Description = GetInvoiceDescription(issuedInvoiceItems, projectsInInvoice);
 
@@ -95,7 +97,7 @@
             invoice.CurrencyId = (int)appSetings.Currency;
             invoice.DiscountPercentage = purchaser?.DiscountPercentage ?? 0;
             invoice.Items = issuedInvoiceItems;
-            api.IssuedInvoiceClient.Post(invoice);
+            await api.IssuedInvoiceClient.PostAsync(invoice);
         }
 
         private IssuedInvoiceItemPostModel CreateInvoiceItem(string description, long duration, double hourlyRate)
@@ -113,12 +115,12 @@
                        };
         }
 
-        private ApiResult<Page<ContactListGetModel>> FindContactByName(string clientName, DokladApi api)
+        private async Task<ApiResult<Page<ContactListGetModel>>> FindContactByNameAsync(string clientName, DokladApi api)
         {
             var contactFilter = new ContactFilter();
             contactFilter.CompanyName.IsEqual(clientName);
 
-            var contact = api.ContactClient.List().Filter(x => x.CompanyName.IsEqual(clientName)).Get();
+            var contact = await api.ContactClient.List().Filter(x => x.CompanyName.IsEqual(clientName)).GetAsync();
             return contact;
         }
 
@@ -127,7 +129,7 @@
             return timeFormaterService.FormatToNerestHalfHour(duration);
         }
 
-        private bool GenerateInvoice(IGrouping<long?, TimeEntry> timeEntries, IList<Client> clients, IList<Project> projects)
+        private async Task<bool> GenerateInvoice(IGrouping<long?, TimeEntry> timeEntries, IList<Client> clients, IList<Project> projects)
         {
             if (timeEntries.Key == null)
             {
@@ -144,7 +146,7 @@
 
             IList<Project> projectsInInvoice;
             var invoiceItems = GenerateInvoiceItems(timeEntries.ToList(), projects, out projectsInInvoice);
-            CreateAndSaveInvoice(client, invoiceItems, projectsInInvoice);
+            await CreateAndSaveInvoice(client, invoiceItems, projectsInInvoice);
 
             return true;
         }

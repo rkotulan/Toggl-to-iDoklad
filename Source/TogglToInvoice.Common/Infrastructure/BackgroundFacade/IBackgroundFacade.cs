@@ -7,6 +7,7 @@
 namespace TogglToInvoice.Common.Infrastructure.BackgroundFacade
 {
     using System;
+    using System.Threading.Tasks;
 
     using TogglToInvoice.Common.Domain;
     using TogglToInvoice.Common.Services;

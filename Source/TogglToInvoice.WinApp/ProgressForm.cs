@@ -12,6 +12,8 @@ namespace TogglToInvoice.WinApp
 
     using Syncfusion.Windows.Forms;
 
+    using Toggl;
+
     using TogglToInvoice.Common.Domain;
     using TogglToInvoice.Common.Infrastructure.BackgroundFacade;
 
@@ -37,12 +39,12 @@ namespace TogglToInvoice.WinApp
 
             this.backgroundWorker = new BackgroundWorker();
             this.backgroundWorker.WorkerReportsProgress = true;
-            this.backgroundWorker.DoWork += this.DoWork;
+            this.backgroundWorker.DoWork += this.DoWorkAsync;
             this.backgroundWorker.ProgressChanged += this.OnProgressChanged;
             this.backgroundWorker.RunWorkerCompleted += this.OnRunWorkerCompleted;
         }
 
-        private void DoWork(object sender, DoWorkEventArgs e)
+        private void DoWorkAsync(object sender, DoWorkEventArgs e)
         {
             this.backgroundFacade.DoWork();
         }
